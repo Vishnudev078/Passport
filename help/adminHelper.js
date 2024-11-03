@@ -21,5 +21,17 @@ module.exports={
                 reject(err);
             })
          })
-    }
+    },
+  
+  sumbitDetails:()=>{
+    return new Promise(async (resolve, reject) => {
+      const query='INSERT INTO details () VALUES()';
+      await db.promise().query().then((result)=>{
+        resolve(result);
+      }).catch((err)=>{
+        reject(err);
+        console.log("Error while Insertion");  
+      })
+    })
+  }
 }
