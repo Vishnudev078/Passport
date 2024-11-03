@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var hbs=require('express-handlebars');
 var logger = require('morgan');
+var fileupload = require('express-fileupload');
 var db = require('./conifg/connection');
 
 var adminRouter = require('./routes/admin');
@@ -22,6 +23,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(fileupload());
 
 app.use('/', adminRouter);
 app.use('/users', usersRouter);
