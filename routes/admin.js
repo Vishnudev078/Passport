@@ -9,7 +9,6 @@ router.get('/', function(req, res, next) {
 router.post('/login',(req,res,next)=>{
 var username=req.body.username;
 var password=req.body.password;
-console.log(username)
 adminHelper.checkLogin(username,password).then((result)=>{
   if(result===true)
   {
@@ -22,4 +21,6 @@ adminHelper.checkLogin(username,password).then((result)=>{
   res.redirect('./');
 })
 });
+
+
 module.exports = router;
