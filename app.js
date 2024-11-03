@@ -8,7 +8,6 @@ var fileupload = require('express-fileupload');
 var db = require('./conifg/connection');
 
 var adminRouter = require('./routes/admin');
-var usersRouter = require('./routes/users');
 
 var app = express();
 
@@ -26,7 +25,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(fileupload());
 
 app.use('/', adminRouter);
-app.use('/users', usersRouter);
 
 // Database connection //
 db.connect((err)=>{
