@@ -4,9 +4,9 @@ var mysql=require('mysql2')
 const db=mysql.createConnection(
     {
         host:'localhost',
-        user:'root',
-        password:'vishnu@123',
-        database:'test'
+        user:'Sachin',
+        password:'Sachin@2004',
+        database:'passportproject'
     }
 );
 
